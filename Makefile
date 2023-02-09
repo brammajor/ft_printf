@@ -6,11 +6,11 @@
 #    By: brmajor <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 11:02:09 by brmajor           #+#    #+#              #
-#    Updated: 2023/02/07 17:26:39 by brmajor          ###   ########.fr        #
+#    Updated: 2023/02/09 12:00:22 by brmajor          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	 includes.c ft_printf.c putcharf.c putdecf.c puthexf.c putnbrf.c putptrf.c putstrf.c
+SRC =	 utils.c ft_printf.c putcharf.c putdecf.c puthexf.c putnbrf.c putptrf.c putstrf.c
 
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a
