@@ -6,7 +6,7 @@
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:33:17 by brmajor           #+#    #+#             */
-/*   Updated: 2023/02/09 17:34:28 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/02/10 13:36:33 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int	check(char chr, va_list arg)
 		return (putdecf(va_arg(arg, unsigned int)));
 	else if (chr == 'x' || chr == 'X')
 		return (puthexf(va_arg(arg, unsigned int), chr));
+	else if (chr == '\n')
+		return (putstrf("%\n"));
+	else if (chr == '%')
+		return (putcharf('%'));
 	else
-	{
-		write(1, "%", 1);
-		return (1);
-	}
+		return (-1);
 }
 
 int	ft_printf(const char *input, ...)
@@ -44,14 +45,10 @@ int	ft_printf(const char *input, ...)
 	i = 0;
 	while (input[i])
 	{
-		if (input[i] == '%' && ft_strchr("cspdiuxX%", input[i + 1]) == 1)
+		if (input[i] == '%' && ft_strchr("cspdiuxX%\n", input[i + 1]) == 1)
 			len += check(input[++i], arg);
-		else if (input[i] == '%' && ft_strchr("cspdiuxX%", input[i + 1]) == 0)
-		{
-			len += putcharf('%');
-			if (input[i + 1] != '\n')
-				i++;
-		}
+		else if (input [i] == '%')
+			return (-1);
 		else
 			len += putcharf(input[i]);
 		i++;

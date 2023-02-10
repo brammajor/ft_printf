@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf_tester.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brmajor <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:39:07 by brmajor           #+#    #+#             */
-/*   Updated: 2023/02/09 17:00:18 by brmajor          ###   ########.fr       */
+/*   Updated: 2023/02/10 13:33:59 by brmajor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,12 +179,18 @@ int	main()
 	printf("\n");
 
 	printf("28--------- \n");
-	printf("%i", ft_printf("%q"));
-	printf("%i", printf("%q"));
+	printf("%i ", ft_printf("%l"));
+	printf("%i ", printf("%l"));
 
 	printf("\n");
 
 	printf("29--------- \n");
-	printf("%i ", ft_printf("%%%"));
-	printf("%i ", printf("%%%"));
+	printf("%i ", ft_printf("%%%%%%%%%qcajgjiddidwnwdnciefiirietotffetitomxnbaqiqflgemvnxytyw 1112aaaaafk ff\n\n\n\nereee"));
+	printf("%i ", printf("%%%%%%%%%qcajgjiddidwnwdnciefiirietotffetitomxnbaqiqflgemvnxytyw 1112aaaaafk ff\n\n\n\nereee"));
+
+	printf("\n");
+
+	printf("30--------- \n");
+	printf("%i ", ft_printf("%'\0'"));
+        printf("%i ", printf("%'\0'"));
 }
